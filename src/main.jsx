@@ -1,11 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./components/AppRouter.tsx";
+import { LanguageProvider } from "./i18n/LanguageContext.tsx";
 import "./index.css";
 
 console.log("main.jsx");
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <LanguageProvider>
+        <AppRouter />
+      </LanguageProvider>
+    </BrowserRouter>
   </StrictMode>,
 );

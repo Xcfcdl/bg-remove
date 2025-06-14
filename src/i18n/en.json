@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "title": "BG Remover - Inkscape Alternative",
+    "model": "Model:",
+    "iosOptimized": "Using optimized iOS background removal"
+  },
+  "hero": {
+    "title": "Remove Image Background - Easier Than Inkscape",
+    "subtitle": "100% Automatically and Free - No Inkscape Skills Required",
+    "description": "Skip complex Inkscape tutorials! Upload your image and let our AI remove the background instantly. Perfect for professional photos, product images, and more.",
+    "features": [
+      "✓ Faster than learning Inkscape background removal",
+      "✓ No need for 'inkscape how to remove background' tutorials",
+      "✓ One-click alternative to manual Inkscape editing"
+    ],
+    "credit": "Built with love by Addy Osmani using Transformers.js"
+  },
+  "upload": {
+    "dragDrop": "Drag and drop images here",
+    "clickSelect": "or click to select files",
+    "processing": "Processing...",
+    "error": "Error processing image",
+    "loading": "Loading background removal model...",
+    "switchingModels": "Switching models...",
+    "switchToCrossBrowser": "Switch to Cross-browser Version"
+  },
+  "samples": {
+    "title": "No image? Try one of these sample images:",
+    "description": "See how easy it is compared to Inkscape background removal tutorials",
+    "privacy": "All images are processed locally on your device and are not uploaded to any server.",
+    "comparison": "Why struggle with 'inkscape remove background' when you can get instant results here?"
+  },
+  "footer": {
+    "features": {
+      "title": "Why Choose Our Background Remover?",
+      "items": [
+        "🚀 Instant Results - No waiting, no tutorials",
+        "🎯 AI-Powered - Advanced machine learning technology",
+        "🔒 Privacy First - All processing happens locally",
+        "💰 Completely Free - No hidden costs or subscriptions",
+        "📱 Works Everywhere - Desktop, tablet, and mobile",
+        "🎨 Professional Quality - Perfect for e-commerce and design"
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "1. Upload your image or drag & drop",
+        "2. Our AI automatically detects the subject",
+        "3. Background is removed in seconds",
+        "4. Download your transparent PNG"
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How is this better than Inkscape?",
+          "answer": "Unlike Inkscape which requires manual selection and complex tutorials, our tool uses AI to automatically detect and remove backgrounds in seconds."
+        },
+        {
+          "question": "Is it really free?",
+          "answer": "Yes! Completely free with no limits, no watermarks, and no sign-up required."
+        },
+        {
+          "question": "What image formats are supported?",
+          "answer": "We support JPG, PNG, and WebP formats. Output is always a transparent PNG."
+        },
+        {
+          "question": "Is my data safe?",
+          "answer": "Absolutely! All processing happens locally in your browser. Your images never leave your device."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Users Say",
+      "items": [
+        {
+          "name": "Sarah Chen",
+          "role": "E-commerce Store Owner",
+          "content": "This saved me hours compared to learning Inkscape. Perfect for my product photos!"
+        },
+        {
+          "name": "Mike Rodriguez",
+          "role": "Graphic Designer",
+          "content": "Much faster than manual Inkscape editing. Great for quick background removal tasks."
+        },
+        {
+          "name": "Lisa Wang",
+          "role": "Social Media Manager",
+          "content": "No more struggling with Inkscape tutorials. This just works!"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "free": {
+        "title": "Free Forever",
+        "features": [
+          "Unlimited background removal",
+          "High-quality AI processing",
+          "No watermarks",
+          "Local processing (privacy-first)",
+          "Multiple image formats",
+          "Mobile & desktop support"
+        ],
+        "cta": "Start Removing Backgrounds"
+      }
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "email": "Contact us",
+      "github": "View on GitHub"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "© 2024 BG Remover. All rights reserved."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "zh-tw": "繁體中文",
+    "zh-hk": "香港粵語",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол"
+  }
+}

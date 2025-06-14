@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "title": "BG Remover - Alternativa a Inkscape",
+    "model": "Modelo:",
+    "iosOptimized": "Usando eliminación de fondo optimizada para iOS"
+  },
+  "hero": {
+    "title": "Eliminar Fondo de Imagen - Más Fácil que Inkscape",
+    "subtitle": "100% Automático y Gratuito - No Se Requieren Habilidades de Inkscape",
+    "description": "¡Olvídate de los complejos tutoriales de Inkscape! Sube tu imagen y deja que nuestra IA elimine el fondo instantáneamente. Perfecto para fotos profesionales, imágenes de productos y más.",
+    "features": [
+      "✓ Más rápido que aprender a eliminar fondos con Inkscape",
+      "✓ No necesitas tutoriales de 'cómo eliminar fondos en Inkscape'",
+      "✓ Alternativa de un clic a la edición manual en Inkscape"
+    ],
+    "credit": "Creado con amor por Addy Osmani usando Transformers.js"
+  },
+  "upload": {
+    "dragDrop": "Arrastra y suelta imágenes aquí",
+    "clickSelect": "o haz clic para seleccionar archivos",
+    "processing": "Procesando...",
+    "error": "Error al procesar la imagen",
+    "loading": "Cargando modelo de eliminación de fondo...",
+    "switchingModels": "Cambiando modelos...",
+    "switchToCrossBrowser": "Cambiar a Versión Multi-navegador"
+  },
+  "samples": {
+    "title": "¿Sin imagen? Prueba una de estas imágenes de muestra:",
+    "description": "Mira qué fácil es comparado con los tutoriales de eliminación de fondo de Inkscape",
+    "privacy": "Todas las imágenes se procesan localmente en tu dispositivo y no se suben a ningún servidor.",
+    "comparison": "¿Por qué luchar con 'eliminar fondo en Inkscape' cuando puedes obtener resultados instantáneos aquí?"
+  },
+  "footer": {
+    "features": {
+      "title": "¿Por Qué Elegir Nuestro Eliminador de Fondos?",
+      "items": [
+        "🚀 Resultados Instantáneos - Sin esperas, sin tutoriales",
+        "🎯 Impulsado por IA - Tecnología avanzada de aprendizaje automático",
+        "🔒 Privacidad Primero - Todo el procesamiento es local",
+        "💰 Completamente Gratuito - Sin costos ocultos ni suscripciones",
+        "📱 Funciona en Todas Partes - Escritorio, tablet y móvil",
+        "🎨 Calidad Profesional - Perfecto para e-commerce y diseño"
+      ]
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "steps": [
+        "1. Sube tu imagen o arrástrala",
+        "2. Nuestra IA detecta automáticamente el sujeto",
+        "3. El fondo se elimina en segundos",
+        "4. Descarga tu PNG transparente"
+      ]
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": [
+        {
+          "question": "¿Por qué es mejor que Inkscape?",
+          "answer": "A diferencia de Inkscape que requiere selección manual y tutoriales complejos, nuestra herramienta usa IA para detectar y eliminar fondos automáticamente en segundos."
+        },
+        {
+          "question": "¿Es realmente gratis?",
+          "answer": "¡Sí! Completamente gratis sin límites, sin marcas de agua y sin necesidad de registro."
+        },
+        {
+          "question": "¿Qué formatos de imagen se admiten?",
+          "answer": "Admitimos formatos JPG, PNG y WebP. La salida siempre es un PNG transparente."
+        },
+        {
+          "question": "¿Mis datos están seguros?",
+          "answer": "¡Absolutamente! Todo el procesamiento ocurre localmente en tu navegador. Tus imágenes nunca salen de tu dispositivo."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen los Usuarios",
+      "items": [
+        {
+          "name": "Sara García",
+          "role": "Dueña de Tienda E-commerce",
+          "content": "¡Esto me ahorró horas comparado con aprender Inkscape. Perfecto para mis fotos de productos!"
+        },
+        {
+          "name": "Miguel Rodríguez",
+          "role": "Diseñador Gráfico",
+          "content": "Mucho más rápido que la edición manual en Inkscape. Genial para tareas rápidas de eliminación de fondo."
+        },
+        {
+          "name": "Laura Martínez",
+          "role": "Gerente de Redes Sociales",
+          "content": "No más luchas con tutoriales de Inkscape. ¡Esto simplemente funciona!"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Precios Simples y Transparentes",
+      "free": {
+        "title": "Gratis por Siempre",
+        "features": [
+          "Eliminación de fondo ilimitada",
+          "Procesamiento IA de alta calidad",
+          "Sin marcas de agua",
+          "Procesamiento local (privacidad primero)",
+          "Múltiples formatos de imagen",
+          "Soporte móvil y escritorio"
+        ],
+        "cta": "Empezar a Eliminar Fondos"
+      }
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "Contáctanos",
+      "github": "Ver en GitHub"
+    },
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "copyright": "© 2024 BG Remover. Todos los derechos reservados."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "zh-tw": "繁體中文",
+    "zh-hk": "香港粵語",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "title": "背景移除工具 - Inkscape 替代品",
+    "model": "模型：",
+    "iosOptimized": "使用优化的 iOS 背景移除"
+  },
+  "hero": {
+    "title": "移除图片背景 - 比 Inkscape 更简单",
+    "subtitle": "100% 自动化且免费 - 无需 Inkscape 技能",
+    "description": "跳过复杂的 Inkscape 教程！上传您的图片，让我们的 AI 立即移除背景。适用于专业照片、产品图片等。",
+    "features": [
+      "✓ 比学习 Inkscape 背景移除更快",
+      "✓ 无需 'inkscape 如何移除背景' 教程",
+      "✓ 一键替代手动 Inkscape 编辑"
+    ],
+    "credit": "由 Addy Osmani 使用 Transformers.js 精心打造"
+  },
+  "upload": {
+    "dragDrop": "拖拽图片到这里",
+    "clickSelect": "或点击选择文件",
+    "processing": "处理中...",
+    "error": "图片处理错误",
+    "loading": "正在加载背景移除模型...",
+    "switchingModels": "正在切换模型...",
+    "switchToCrossBrowser": "切换到跨浏览器版本"
+  },
+  "samples": {
+    "title": "没有图片？试试这些示例图片：",
+    "description": "看看相比 Inkscape 背景移除教程有多简单",
+    "privacy": "所有图片都在您的设备上本地处理，不会上传到任何服务器。",
+    "comparison": "为什么要为 'inkscape 移除背景' 而苦恼，当您可以在这里获得即时结果？"
+  },
+  "footer": {
+    "features": {
+      "title": "为什么选择我们的背景移除工具？",
+      "items": [
+        "🚀 即时结果 - 无需等待，无需教程",
+        "🎯 AI 驱动 - 先进的机器学习技术",
+        "🔒 隐私优先 - 所有处理都在本地进行",
+        "💰 完全免费 - 无隐藏费用或订阅",
+        "📱 随处可用 - 桌面、平板和手机",
+        "🎨 专业品质 - 完美适用于电商和设计"
+      ]
+    },
+    "howItWorks": {
+      "title": "工作原理",
+      "steps": [
+        "1. 上传您的图片或拖放",
+        "2. 我们的 AI 自动检测主体",
+        "3. 几秒钟内移除背景",
+        "4. 下载您的透明 PNG"
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": [
+        {
+          "question": "这比 Inkscape 好在哪里？",
+          "answer": "与需要手动选择和复杂教程的 Inkscape 不同，我们的工具使用 AI 在几秒钟内自动检测和移除背景。"
+        },
+        {
+          "question": "真的免费吗？",
+          "answer": "是的！完全免费，无限制，无水印，无需注册。"
+        },
+        {
+          "question": "支持哪些图片格式？",
+          "answer": "我们支持 JPG、PNG 和 WebP 格式。输出始终是透明的 PNG。"
+        },
+        {
+          "question": "我的数据安全吗？",
+          "answer": "绝对安全！所有处理都在您的浏览器中本地进行。您的图片永远不会离开您的设备。"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "用户评价",
+      "items": [
+        {
+          "name": "陈莎拉",
+          "role": "电商店主",
+          "content": "相比学习 Inkscape，这为我节省了数小时。完美适用于我的产品照片！"
+        },
+        {
+          "name": "迈克·罗德里格斯",
+          "role": "平面设计师",
+          "content": "比手动 Inkscape 编辑快得多。非常适合快速背景移除任务。"
+        },
+        {
+          "name": "丽莎·王",
+          "role": "社交媒体经理",
+          "content": "不再为 Inkscape 教程而苦恼。这个工具就是好用！"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "简单透明的定价",
+      "free": {
+        "title": "永久免费",
+        "features": [
+          "无限背景移除",
+          "高质量 AI 处理",
+          "无水印",
+          "本地处理（隐私优先）",
+          "多种图片格式",
+          "移动端和桌面端支持"
+        ],
+        "cta": "开始移除背景"
+      }
+    },
+    "contact": {
+      "title": "联系我们",
+      "email": "联系我们",
+      "github": "在 GitHub 上查看"
+    },
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "copyright": "© 2024 BG Remover. 保留所有权利。"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "zh-tw": "繁體中文",
+    "zh-hk": "香港粵語",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол"
+  }
+}

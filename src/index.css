@@ -32,7 +32,69 @@
 }
 
 body {
-  background: linear-gradient(135deg, #5200ae, #4062bb);
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+/* Orange theme variables */
+:root {
+  --primary-orange: #ff6b35;
+  --secondary-orange: #f7931e;
+  --light-orange: #fff4f0;
+  --dark-orange: #e55a2b;
+  --accent-orange: #ff8c42;
+}
+
+/* Custom orange gradient backgrounds */
+.bg-orange-gradient {
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+}
+
+.bg-orange-light-gradient {
+  background: linear-gradient(135deg, var(--light-orange), #fef7f0);
+}
+
+/* Orange button styles */
+.btn-orange {
+  background: var(--primary-orange);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background: var(--dark-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Orange focus styles */
+.focus-orange:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--primary-orange);
+  border-color: var(--primary-orange);
+}
+
+/* Animated gradient text */
+.text-orange-gradient {
+  background: linear-gradient(45deg, var(--primary-orange), var(--secondary-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Orange loading spinner */
+.spinner-orange {
+  border-color: var(--light-orange);
+  border-top-color: var(--primary-orange);
+}
+
+/* Orange shadow utilities */
+.shadow-orange {
+  box-shadow: 0 4px 14px 0 rgba(255, 107, 53, 0.15);
+}
+
+.shadow-orange-lg {
+  box-shadow: 0 10px 25px -3px rgba(255, 107, 53, 0.2), 0 4px 6px -2px rgba(255, 107, 53, 0.1);
 }
 
 /* Slider styles */

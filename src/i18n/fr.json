@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "title": "BG Remover - Alternative à Inkscape",
+    "model": "Modèle :",
+    "iosOptimized": "Utilisation de la suppression d'arrière-plan optimisée pour iOS"
+  },
+  "hero": {
+    "title": "Supprimer l'Arrière-plan d'Image - Plus Facile qu'Inkscape",
+    "subtitle": "100% Automatique et Gratuit - Aucune Compétence Inkscape Requise",
+    "description": "Oubliez les tutoriels complexes d'Inkscape ! Téléchargez votre image et laissez notre IA supprimer l'arrière-plan instantanément. Parfait pour les photos professionnelles, les images de produits et plus encore.",
+    "features": [
+      "✓ Plus rapide que d'apprendre à supprimer l'arrière-plan avec Inkscape",
+      "✓ Pas besoin de tutoriels 'comment supprimer l'arrière-plan avec Inkscape'",
+      "✓ Alternative en un clic à l'édition manuelle avec Inkscape"
+    ],
+    "credit": "Créé avec passion par Addy Osmani en utilisant Transformers.js"
+  },
+  "upload": {
+    "dragDrop": "Glissez et déposez des images ici",
+    "clickSelect": "ou cliquez pour sélectionner des fichiers",
+    "processing": "Traitement en cours...",
+    "error": "Erreur lors du traitement de l'image",
+    "loading": "Chargement du modèle de suppression d'arrière-plan...",
+    "switchingModels": "Changement de modèles...",
+    "switchToCrossBrowser": "Passer à la Version Multi-navigateurs"
+  },
+  "samples": {
+    "title": "Pas d'image ? Essayez l'une de ces images d'exemple :",
+    "description": "Voyez comme c'est facile comparé aux tutoriels de suppression d'arrière-plan d'Inkscape",
+    "privacy": "Toutes les images sont traitées localement sur votre appareil et ne sont téléchargées sur aucun serveur.",
+    "comparison": "Pourquoi lutter avec 'supprimer l'arrière-plan avec Inkscape' quand vous pouvez obtenir des résultats instantanés ici ?"
+  },
+  "footer": {
+    "features": {
+      "title": "Pourquoi Choisir Notre Outil de Suppression d'Arrière-plan ?",
+      "items": [
+        "🚀 Résultats Instantanés - Pas d'attente, pas de tutoriels",
+        "🎯 Propulsé par l'IA - Technologie avancée d'apprentissage automatique",
+        "🔒 Confidentialité d'Abord - Tout le traitement se fait localement",
+        "💰 Entièrement Gratuit - Pas de coûts cachés ni d'abonnements",
+        "📱 Fonctionne Partout - Ordinateur, tablette et mobile",
+        "🎨 Qualité Professionnelle - Parfait pour l'e-commerce et le design"
+      ]
+    },
+    "howItWorks": {
+      "title": "Comment Ça Marche",
+      "steps": [
+        "1. Téléchargez votre image ou glissez-déposez",
+        "2. Notre IA détecte automatiquement le sujet",
+        "3. L'arrière-plan est supprimé en quelques secondes",
+        "4. Téléchargez votre PNG transparent"
+      ]
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "items": [
+        {
+          "question": "En quoi est-ce mieux qu'Inkscape ?",
+          "answer": "Contrairement à Inkscape qui nécessite une sélection manuelle et des tutoriels complexes, notre outil utilise l'IA pour détecter et supprimer automatiquement les arrière-plans en quelques secondes."
+        },
+        {
+          "question": "Est-ce vraiment gratuit ?",
+          "answer": "Oui ! Entièrement gratuit sans limites, sans filigranes et sans inscription requise."
+        },
+        {
+          "question": "Quels formats d'image sont pris en charge ?",
+          "answer": "Nous prenons en charge les formats JPG, PNG et WebP. Le résultat est toujours un PNG transparent."
+        },
+        {
+          "question": "Mes données sont-elles en sécurité ?",
+          "answer": "Absolument ! Tout le traitement se fait localement dans votre navigateur. Vos images ne quittent jamais votre appareil."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Ce Que Disent les Utilisateurs",
+      "items": [
+        {
+          "name": "Sophie Dubois",
+          "role": "Propriétaire de Boutique E-commerce",
+          "content": "Cela m'a fait gagner des heures par rapport à l'apprentissage d'Inkscape. Parfait pour mes photos de produits !"
+        },
+        {
+          "name": "Michel Lambert",
+          "role": "Designer Graphique",
+          "content": "Beaucoup plus rapide que l'édition manuelle avec Inkscape. Idéal pour les tâches rapides de suppression d'arrière-plan."
+        },
+        {
+          "name": "Léa Martin",
+          "role": "Responsable des Médias Sociaux",
+          "content": "Fini les galères avec les tutoriels Inkscape. Ça fonctionne tout simplement !"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Tarification Simple et Transparente",
+      "free": {
+        "title": "Gratuit pour Toujours",
+        "features": [
+          "Suppression d'arrière-plan illimitée",
+          "Traitement IA de haute qualité",
+          "Pas de filigranes",
+          "Traitement local (confidentialité d'abord)",
+          "Multiples formats d'image",
+          "Support mobile et ordinateur"
+        ],
+        "cta": "Commencer à Supprimer des Arrière-plans"
+      }
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "email": "Nous contacter",
+      "github": "Voir sur GitHub"
+    },
+    "legal": {
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "copyright": "© 2024 BG Remover. Tous droits réservés."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "zh-tw": "繁體中文",
+    "zh-hk": "香港粵語",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол"
+  }
+}

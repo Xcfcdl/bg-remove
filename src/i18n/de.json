@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "title": "BG Remover - Inkscape Alternative",
+    "model": "Modell:",
+    "iosOptimized": "Verwendet optimierte iOS-Hintergrundentfernung"
+  },
+  "hero": {
+    "title": "Bildhintergrund entfernen - Einfacher als Inkscape",
+    "subtitle": "100% Automatisch und Kostenlos - Keine Inkscape-Kenntnisse erforderlich",
+    "description": "Vergessen Sie komplexe Inkscape-Tutorials! Laden Sie Ihr Bild hoch und lassen Sie unsere KI den Hintergrund sofort entfernen. Perfekt für professionelle Fotos, Produktbilder und mehr.",
+    "features": [
+      "✓ Schneller als das Erlernen der Hintergrundentfernung mit Inkscape",
+      "✓ Keine 'Inkscape Hintergrund entfernen' Tutorials nötig",
+      "✓ Ein-Klick-Alternative zur manuellen Inkscape-Bearbeitung"
+    ],
+    "credit": "Mit Liebe erstellt von Addy Osmani mit Transformers.js"
+  },
+  "upload": {
+    "dragDrop": "Bilder hier hineinziehen",
+    "clickSelect": "oder klicken, um Dateien auszuwählen",
+    "processing": "Verarbeitung läuft...",
+    "error": "Fehler bei der Bildverarbeitung",
+    "loading": "Lade Hintergrundentfernungsmodell...",
+    "switchingModels": "Wechsle Modelle...",
+    "switchToCrossBrowser": "Zur Browser-übergreifenden Version wechseln"
+  },
+  "samples": {
+    "title": "Kein Bild? Probieren Sie eines dieser Beispielbilder:",
+    "description": "Sehen Sie, wie einfach es im Vergleich zu Inkscape-Tutorials ist",
+    "privacy": "Alle Bilder werden lokal auf Ihrem Gerät verarbeitet und nicht auf Server hochgeladen.",
+    "comparison": "Warum mit 'Inkscape Hintergrund entfernen' kämpfen, wenn Sie hier sofortige Ergebnisse erhalten können?"
+  },
+  "footer": {
+    "features": {
+      "title": "Warum unseren Hintergrund-Entferner wählen?",
+      "items": [
+        "🚀 Sofortige Ergebnisse - Keine Wartezeit, keine Tutorials",
+        "🎯 KI-gesteuert - Fortschrittliche maschinelle Lerntechnologie",
+        "🔒 Datenschutz zuerst - Alle Verarbeitung erfolgt lokal",
+        "💰 Komplett kostenlos - Keine versteckten Kosten oder Abonnements",
+        "📱 Funktioniert überall - Desktop, Tablet und Mobilgeräte",
+        "🎨 Professionelle Qualität - Perfekt für E-Commerce und Design"
+      ]
+    },
+    "howItWorks": {
+      "title": "So funktioniert's",
+      "steps": [
+        "1. Bild hochladen oder per Drag & Drop einfügen",
+        "2. Unsere KI erkennt automatisch das Motiv",
+        "3. Hintergrund wird in Sekunden entfernt",
+        "4. Transparente PNG herunterladen"
+      ]
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "question": "Warum ist es besser als Inkscape?",
+          "answer": "Im Gegensatz zu Inkscape, das manuelle Auswahl und komplexe Tutorials erfordert, verwendet unser Tool KI, um Hintergründe in Sekunden automatisch zu erkennen und zu entfernen."
+        },
+        {
+          "question": "Ist es wirklich kostenlos?",
+          "answer": "Ja! Völlig kostenlos ohne Einschränkungen, ohne Wasserzeichen und ohne Registrierung."
+        },
+        {
+          "question": "Welche Bildformate werden unterstützt?",
+          "answer": "Wir unterstützen JPG, PNG und WebP Formate. Die Ausgabe ist immer ein transparentes PNG."
+        },
+        {
+          "question": "Sind meine Daten sicher?",
+          "answer": "Absolut! Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser. Ihre Bilder verlassen niemals Ihr Gerät."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Was Benutzer sagen",
+      "items": [
+        {
+          "name": "Sarah Schmidt",
+          "role": "E-Commerce-Shopbesitzerin",
+          "content": "Das hat mir im Vergleich zum Lernen von Inkscape Stunden erspart. Perfekt für meine Produktfotos!"
+        },
+        {
+          "name": "Michael Weber",
+          "role": "Grafikdesigner",
+          "content": "Viel schneller als manuelle Inkscape-Bearbeitung. Großartig für schnelle Hintergrundentfernungen."
+        },
+        {
+          "name": "Lisa Wagner",
+          "role": "Social Media Managerin",
+          "content": "Kein Kampf mehr mit Inkscape-Tutorials. Das funktioniert einfach!"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Einfache, transparente Preisgestaltung",
+      "free": {
+        "title": "Für immer kostenlos",
+        "features": [
+          "Unbegrenzte Hintergrundentfernung",
+          "Hochwertige KI-Verarbeitung",
+          "Keine Wasserzeichen",
+          "Lokale Verarbeitung (Datenschutz zuerst)",
+          "Mehrere Bildformate",
+          "Mobile & Desktop-Unterstützung"
+        ],
+        "cta": "Jetzt Hintergründe entfernen"
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "email": "Kontaktieren Sie uns",
+      "github": "Auf GitHub ansehen"
+    },
+    "legal": {
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen",
+      "copyright": "© 2024 BG Remover. Alle Rechte vorbehalten."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "zh-tw": "繁體中文",
+    "zh-hk": "香港粵語",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол"
+  }
+}

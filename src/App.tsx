@@ -1,6 +1,9 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDropzone } from "react-dropzone";
 import { Images } from "./components/Images";
+import Footer from "./components/Footer";
+import LanguageSelector from "./components/LanguageSelector";
+import { useLanguage } from "./i18n/LanguageContext";
 import { processImages, initializeModel, getModelInfo } from "../lib/process";
 
 interface AppError {
@@ -31,6 +34,7 @@ const isMobileSafari = () => {
 };
 
 export default function App() {
+  const { t } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<AppError | null>(null);
   const [isWebGPU, setIsWebGPU] = useState(false);
@@ -165,33 +169,36 @@ export default function App() {
   // Remove the full screen error and loading states
 
   return (
-    <div className="min-h-screen bg-gray-50" onPaste={handlePaste}>
-      <nav className="bg-white shadow-sm">
+    <div className="min-h-screen bg-orange-light-gradient" onPaste={handlePaste}>
+      <nav className="bg-white shadow-orange border-b border-orange-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-800">
-              BG Remover - Inkscape Alternative
+            <h1 className="text-2xl font-bold text-orange-gradient">
+              {t.nav.title}
             </h1>
-            {!isIOS && (
-              <div className="flex items-center gap-4">
-                <span className="text-gray-600">Model:</span>
-                <select
-                  value={currentModel}
-                  onChange={handleModelChange}
-                  className="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  disabled={!isWebGPU}
-                >
-                  <option value="briaai/RMBG-1.4">RMBG-1.4 (Cross-browser)</option>
-                  {isWebGPU && (
-                    <option value="Xenova/modnet">MODNet (WebGPU)</option>
-                  )}
-                </select>
-              </div>
-            )}
+            <div className="flex items-center gap-4">
+              <LanguageSelector />
+              {!isIOS && (
+                <div className="flex items-center gap-4">
+                  <span className="text-gray-600">{t.nav.model}</span>
+                  <select
+                    value={currentModel}
+                    onChange={handleModelChange}
+                    className="bg-white border border-orange-300 rounded-md px-3 py-1 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    disabled={!isWebGPU}
+                  >
+                    <option value="briaai/RMBG-1.4">RMBG-1.4 (Cross-browser)</option>
+                    {isWebGPU && (
+                      <option value="Xenova/modnet">MODNet (WebGPU)</option>
+                    )}
+                  </select>
+                </div>
+              )}
+            </div>
           </div>
           {isIOS && (
-            <p className="text-sm text-gray-500 mt-2">
-              Using optimized iOS background removal
+            <p className="text-sm text-orange-600 mt-2">
+              {t.nav.iosOptimized}
             </p>
           )}
         </div>
@@ -200,28 +207,31 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className={`grid ${images.length === 0 ? 'grid-cols-2 gap-8' : 'grid-cols-1'}`}>
           {images.length === 0 && (
-            <div className="flex flex-col justify-center items-start">
+            <div className="flex flex-col justify-center items-start bg-white rounded-xl p-8 shadow-orange">
               <img 
                 src="hero.png"
-                alt="Surprised man"
-                className="mb-6 w-full object-cover h-[400px]"
+                alt="Hero image"
+                className="mb-6 w-full object-cover h-[400px] rounded-lg"
               />
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Remove Image Background - Easier Than Inkscape
+              <h2 className="text-4xl font-bold text-orange-gradient mb-4">
+                {t.hero.title}
               </h2>
-              <p className="text-lg text-gray-600 mb-4">
-                100% Automatically and Free - No Inkscape Skills Required
+              <p className="text-xl text-gray-700 mb-4 font-medium">
+                {t.hero.subtitle}
               </p>
-              <p className="text-gray-500 mb-4">
-                Skip complex Inkscape tutorials! Upload your image and let our AI remove the background instantly. Perfect for professional photos, product images, and more.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {t.hero.description}
               </p>
-              <div className="text-sm text-gray-400 space-y-1">
-                <p>✓ Faster than learning Inkscape background removal</p>
-                <p>✓ No need for "inkscape how to remove background" tutorials</p>
-                <p>✓ One-click alternative to manual Inkscape editing</p>
+              <div className="text-sm text-gray-500 space-y-2 mb-6">
+                {t.hero.features.map((feature, index) => (
+                  <p key={index} className="flex items-center">
+                    <span className="text-orange-500 mr-2">✓</span>
+                    {feature.replace('✓ ', '')}
+                  </p>
+                ))}
               </div>
-              <p className="text-sm text-gray-300 mt-4">
-                Built with love by Addy Osmani using Transformers.js
+              <p className="text-sm text-orange-400 font-medium">
+                {t.hero.credit}
               </p>
             </div>
           )}
@@ -229,10 +239,10 @@ export default function App() {
           <div className={images.length === 0 ? '' : 'w-full'}>
             <div
               {...getRootProps()}
-              className={`p-8 mb-8 border-2 border-dashed rounded-lg text-center cursor-pointer transition-colors duration-300 ease-in-out bg-white
-                ${isDragAccept ? "border-green-500 bg-green-50" : ""}
-                ${isDragReject ? "border-red-500 bg-red-50" : ""}
-                ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-blue-500 hover:bg-blue-50"}
+              className={`p-8 mb-8 border-2 border-dashed rounded-xl text-center cursor-pointer transition-all duration-300 ease-in-out bg-white shadow-orange
+                ${isDragAccept ? "border-green-500 bg-green-50 shadow-green-200" : ""}
+                ${isDragReject ? "border-red-500 bg-red-50 shadow-red-200" : ""}
+                ${isDragActive ? "border-orange-500 bg-orange-50 shadow-orange-lg" : "border-orange-300 hover:border-orange-500 hover:bg-orange-50 hover:shadow-orange-lg"}
                 ${isLoading || isModelSwitching ? "cursor-not-allowed" : ""}
               `}
             >
@@ -240,9 +250,9 @@ export default function App() {
               <div className="flex flex-col items-center gap-2">
                 {isLoading || isModelSwitching ? (
                   <>
-                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600 mb-2"></div>
-                    <p className="text-lg text-gray-600">
-                      {isModelSwitching ? 'Switching models...' : 'Loading background removal model...'}
+                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500 spinner-orange mb-2"></div>
+                    <p className="text-lg text-gray-600 font-medium">
+                      {isModelSwitching ? t.upload.switchingModels : t.upload.loading}
                     </p>
                   </>
                 ) : error ? (
@@ -257,53 +267,57 @@ export default function App() {
                           e.stopPropagation();
                           handleModelChange({ target: { value: 'briaai/RMBG-1.4' }} as any);
                         }}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 btn-orange rounded-md transition-all"
                       >
-                        Switch to Cross-browser Version
+                        {t.upload.switchToCrossBrowser}
                       </button>
                     )}
                   </>
                 ) : (
                   <>
-                    <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-12 h-12 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-gray-700 font-medium">
                       {isDragActive
                         ? "Drop the images here..."
-                        : "Drag and drop images here"}
+                        : t.upload.dragDrop}
                     </p>
-                    <p className="text-sm text-gray-500">or click to select files</p>
+                    <p className="text-sm text-orange-600">{t.upload.clickSelect}</p>
                   </>
                 )}
               </div>
             </div>
 
             {images.length === 0 && (
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl text-gray-700 font-semibold mb-4">No image? Try one of these sample images:</h3>
-                <p className="text-sm text-gray-600 mb-4">See how easy it is compared to Inkscape background removal tutorials</p>
+              <div className="bg-white rounded-xl p-6 shadow-orange border border-orange-100">
+                <h3 className="text-xl text-gray-800 font-semibold mb-4">{t.samples.title}</h3>
+                <p className="text-sm text-orange-600 mb-4 font-medium">{t.samples.description}</p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {sampleImages.map((url, index) => (
                     <button
                       key={index}
                       onClick={() => handleSampleImageClick(url)}
-                      className="relative aspect-square overflow-hidden rounded-lg hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="relative aspect-square overflow-hidden rounded-lg hover:opacity-90 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm hover:shadow-orange"
                     >
                       <img
                         src={url}
                         alt={`Sample ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
+                      <div className="absolute inset-0 bg-orange-500 bg-opacity-0 hover:bg-opacity-10 transition-all duration-200"></div>
                     </button>
                   ))}
                 </div>
-                <div className="mt-4 space-y-2">
-                  <p className="text-sm text-gray-500">
-                    All images are processed locally on your device and are not uploaded to any server.
+                <div className="mt-6 space-y-2 p-4 bg-orange-50 rounded-lg border border-orange-200">
+                  <p className="text-sm text-gray-700 flex items-center">
+                    <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {t.samples.privacy}
                   </p>
-                  <p className="text-xs text-gray-400">
-                    Why struggle with "inkscape remove background" when you can get instant results here?
+                  <p className="text-xs text-orange-600 font-medium">
+                    💡 {t.samples.comparison}
                   </p>
                 </div>
               </div>
@@ -313,6 +327,7 @@ export default function App() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

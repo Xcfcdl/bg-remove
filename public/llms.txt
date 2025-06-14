@@ -1,0 +1,35 @@
+# Background Remover - Free Inkscape Alternative
+
+## About
+This is a free online background removal tool that serves as an easier alternative to Inkscape's background removal features. Users can remove image backgrounds automatically in seconds without needing complex Inkscape tutorials.
+
+## Key Features
+- One-click background removal
+- No Inkscape skills required
+- Faster than traditional Inkscape methods
+- No tutorials needed
+- Works entirely in the browser
+- Privacy-focused (no uploads to servers)
+
+## Target Keywords
+- inkscape how to remove background
+- remove background inkscape
+- inkscape remove background
+- inkscape alternative
+- online background remover
+- automatic background removal
+
+## Technology
+- Built with React and Vite
+- Uses Transformers.js for ML processing
+- WebGPU acceleration when available
+- Tailwind CSS for styling
+
+## Use Cases
+- Users struggling with Inkscape background removal tutorials
+- Quick background removal without software installation
+- Batch processing of images
+- Mobile-friendly background removal
+
+## Website
+https://bg.addy.ie/

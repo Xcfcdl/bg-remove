@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "title": "背景移除工具 - Inkscape 替代方案",
+    "model": "模型：",
+    "iosOptimized": "使用針對 iOS 優化的背景移除功能"
+  },
+  "hero": {
+    "title": "移除圖片背景 - 比 Inkscape 更簡單",
+    "subtitle": "100% 自動且免費 - 無需 Inkscape 技能",
+    "description": "跳過複雜的 Inkscape 教學！上傳您的圖片，讓我們的 AI 立即移除背景。非常適合專業照片、產品圖片等用途。",
+    "features": [
+      "✓ 比學習 Inkscape 背景移除更快速",
+      "✓ 無需 'inkscape 如何移除背景' 教學",
+      "✓ 一鍵替代 Inkscape 手動編輯"
+    ],
+    "credit": "由 Addy Osmani 使用 Transformers.js 用心打造"
+  },
+  "upload": {
+    "dragDrop": "拖放圖片到此處",
+    "clickSelect": "或點擊選擇檔案",
+    "processing": "處理中...",
+    "error": "圖片處理錯誤",
+    "loading": "載入背景移除模型中...",
+    "switchingModels": "切換模型中...",
+    "switchToCrossBrowser": "切換到跨瀏覽器版本"
+  },
+  "samples": {
+    "title": "沒有圖片？試試這些範例圖片：",
+    "description": "看看與 Inkscape 背景移除教學相比有多簡單",
+    "privacy": "所有圖片都在您的裝置上本地處理，不會上傳到任何伺服器。",
+    "comparison": "為什麼要為 'inkscape 移除背景' 而苦惱，當您可以在這裡獲得即時結果？"
+  },
+  "footer": {
+    "features": {
+      "title": "為什麼選擇我們的背景移除工具？",
+      "items": [
+        "🚀 即時結果 - 無需等待，無需教學",
+        "🎯 AI 驅動 - 先進的機器學習技術",
+        "🔒 隱私優先 - 所有處理都在本地進行",
+        "💰 完全免費 - 無隱藏費用或訂閱",
+        "📱 隨處可用 - 桌面、平板和手機",
+        "🎨 專業品質 - 非常適合電子商務和設計"
+      ]
+    },
+    "howItWorks": {
+      "title": "運作方式",
+      "steps": [
+        "1. 上傳您的圖片或拖放",
+        "2. 我們的 AI 自動偵測主體",
+        "3. 背景在幾秒內移除",
+        "4. 下載高品質結果"
+      ]
+    },
+    "faq": {
+      "title": "常見問題",
+      "items": [
+        {
+          "question": "上傳我的圖片安全嗎？",
+          "answer": "是的！所有圖片都在您的瀏覽器中本地處理。沒有任何內容上傳到我們的伺服器。"
+        },
+        {
+          "question": "支援哪些圖片格式？",
+          "answer": "我們支援所有主要格式：JPG、PNG、WebP 等。"
+        },
+        {
+          "question": "檔案大小有限制嗎？",
+          "answer": "為了最佳效能，我們建議使用 10MB 以下的圖片。"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "用戶評價",
+      "items": [
+        {
+          "name": "陳小美",
+          "role": "平面設計師",
+          "content": "比 Photoshop 或 Inkscape 快得多且簡單得多！"
+        },
+        {
+          "name": "李大明",
+          "role": "網路商店老闆",
+          "content": "非常適合產品照片。節省了數小時的工作時間！"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "價格",
+      "free": {
+        "title": "永久免費",
+        "features": [
+          "無限背景移除",
+          "高品質結果",
+          "本地處理",
+          "無浮水印"
+        ],
+        "cta": "免費開始"
+      }
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "email": "電子郵件",
+      "github": "GitHub"
+    },
+    "legal": {
+      "privacy": "隱私政策",
+      "terms": "使用條款",
+      "copyright": "© 2024 BG Remover. 版權所有。"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "ru": "Русский",
+    "ar": "العربية",
+    "mn": "Монгол",
+    "zh-tw": "繁體中文",
+    "zh-hk": "粵語"
+  }
+}

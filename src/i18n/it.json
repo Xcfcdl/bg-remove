@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "title": "BG Remover - Alternativa a Inkscape",
+    "model": "Modello:",
+    "iosOptimized": "Utilizzo della rimozione sfondo ottimizzata per iOS"
+  },
+  "hero": {
+    "title": "Rimuovi Sfondo Immagine - Più Facile di Inkscape",
+    "subtitle": "100% Automatico e Gratuito - Nessuna Competenza Inkscape Richiesta",
+    "description": "Salta i complessi tutorial di Inkscape! Carica la tua immagine e lascia che la nostra IA rimuova lo sfondo istantaneamente. Perfetto per foto professionali, immagini di prodotti e altro.",
+    "features": [
+      "✓ Più veloce che imparare la rimozione sfondo con Inkscape",
+      "✓ Niente tutorial su 'come rimuovere lo sfondo con Inkscape'",
+      "✓ Alternativa one-click all'editing manuale di Inkscape"
+    ],
+    "credit": "Creato con passione da Addy Osmani utilizzando Transformers.js"
+  },
+  "upload": {
+    "dragDrop": "Trascina e rilascia le immagini qui",
+    "clickSelect": "o clicca per selezionare i file",
+    "processing": "Elaborazione in corso...",
+    "error": "Errore nell'elaborazione dell'immagine",
+    "loading": "Caricamento del modello di rimozione sfondo...",
+    "switchingModels": "Cambio modelli...",
+    "switchToCrossBrowser": "Passa alla Versione Multi-browser"
+  },
+  "samples": {
+    "title": "Nessuna immagine? Prova una di queste immagini di esempio:",
+    "description": "Guarda quanto è facile rispetto ai tutorial di rimozione sfondo di Inkscape",
+    "privacy": "Tutte le immagini vengono elaborate localmente sul tuo dispositivo e non vengono caricate su alcun server.",
+    "comparison": "Perché lottare con 'rimuovere sfondo con Inkscape' quando puoi ottenere risultati istantanei qui?"
+  },
+  "footer": {
+    "features": {
+      "title": "Perché Scegliere il Nostro Rimuovi Sfondo?",
+      "items": [
+        "🚀 Risultati Istantanei - Nessuna attesa, nessun tutorial",
+        "🎯 Basato su IA - Tecnologia avanzata di machine learning",
+        "🔒 Privacy Prima di Tutto - Tutta l'elaborazione avviene localmente",
+        "💰 Completamente Gratuito - Nessun costo nascosto o abbonamento",
+        "📱 Funziona Ovunque - Desktop, tablet e mobile",
+        "🎨 Qualità Professionale - Perfetto per e-commerce e design"
+      ]
+    },
+    "howItWorks": {
+      "title": "Come Funziona",
+      "steps": [
+        "1. Carica la tua immagine o trascina e rilascia",
+        "2. La nostra IA rileva automaticamente il soggetto",
+        "3. Lo sfondo viene rimosso in pochi secondi",
+        "4. Scarica il tuo PNG trasparente"
+      ]
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "items": [
+        {
+          "question": "Perché è meglio di Inkscape?",
+          "answer": "A differenza di Inkscape che richiede selezione manuale e tutorial complessi, il nostro strumento usa l'IA per rilevare e rimuovere automaticamente gli sfondi in pochi secondi."
+        },
+        {
+          "question": "È davvero gratuito?",
+          "answer": "Sì! Completamente gratuito senza limiti, senza filigrane e senza necessità di registrazione."
+        },
+        {
+          "question": "Quali formati di immagine sono supportati?",
+          "answer": "Supportiamo i formati JPG, PNG e WebP. L'output è sempre un PNG trasparente."
+        },
+        {
+          "question": "I miei dati sono al sicuro?",
+          "answer": "Assolutamente! Tutta l'elaborazione avviene localmente nel tuo browser. Le tue immagini non lasciano mai il tuo dispositivo."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Cosa Dicono gli Utenti",
+      "items": [
+        {
+          "name": "Sofia Bianchi",
+          "role": "Proprietaria di E-commerce",
+          "content": "Mi ha fatto risparmiare ore rispetto all'apprendimento di Inkscape. Perfetto per le mie foto di prodotti!"
+        },
+        {
+          "name": "Marco Rossi",
+          "role": "Designer Grafico",
+          "content": "Molto più veloce dell'editing manuale con Inkscape. Ottimo per rimuovere rapidamente gli sfondi."
+        },
+        {
+          "name": "Laura Ferrari",
+          "role": "Social Media Manager",
+          "content": "Basta lottare con i tutorial di Inkscape. Questo funziona e basta!"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Prezzi Semplici e Trasparenti",
+      "free": {
+        "title": "Gratis per Sempre",
+        "features": [
+          "Rimozione sfondo illimitata",
+          "Elaborazione IA di alta qualità",
+          "Nessuna filigrana",
+          "Elaborazione locale (privacy prima di tutto)",
+          "Formati immagine multipli",
+          "Supporto mobile e desktop"
+        ],
+        "cta": "Inizia a Rimuovere Sfondi"
+      }
+    },
+    "contact": {
+      "title": "Contattaci",
+      "email": "Contattaci",
+      "github": "Vedi su GitHub"
+    },
+    "legal": {
+      "privacy": "Informativa sulla Privacy",
+      "terms": "Termini di Servizio",
+      "copyright": "© 2024 BG Remover. Tutti i diritti riservati."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "ko": "한국어"
+  }
+}
