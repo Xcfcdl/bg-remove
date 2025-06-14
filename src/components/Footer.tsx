@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
               <h3 className="font-semibold text-gray-800">{t.footer.contact.title}</h3>
-              <a href="mailto:contact@bg-remover.com" className="text-orange-600 hover:text-orange-700 transition-colors">
+              <a href="mailto:contact@waicto.com" className="text-orange-600 hover:text-orange-700 transition-colors">
                 {t.footer.contact.email}
               </a>
               <a href="https://github.com/addyosmani/bg-remove" className="text-orange-600 hover:text-orange-700 transition-colors">
