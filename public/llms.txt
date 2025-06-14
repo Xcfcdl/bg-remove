@@ -32,4 +32,10 @@ This is a free online background removal tool that serves as an easier alternati
 - Mobile-friendly background removal
 
 ## Website
-https://bg.addy.ie/
+- https://backgroundremover.waicto.com/
+- https://bgremover.waicto.com/
+
+## Contact
+- Email: contact@waicto.com
+- Twitter: [@waicto](https://twitter.com/waicto)
+- Discord: https://discord.gg/waicto
