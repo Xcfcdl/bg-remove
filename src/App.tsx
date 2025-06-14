@@ -170,7 +170,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-800">
-              BG
+              BG Remover - Inkscape Alternative
             </h1>
             {!isIOS && (
               <div className="flex items-center gap-4">
@@ -207,14 +207,19 @@ export default function App() {
                 className="mb-6 w-full object-cover h-[400px]"
               />
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Remove Image Background
+                Remove Image Background - Easier Than Inkscape
               </h2>
               <p className="text-lg text-gray-600 mb-4">
-                100% Automatically and Free
+                100% Automatically and Free - No Inkscape Skills Required
               </p>
-              <p className="text-gray-500">
-                Upload your image and let our AI remove the background instantly. Perfect for professional photos, product images, and more.
+              <p className="text-gray-500 mb-4">
+                Skip complex Inkscape tutorials! Upload your image and let our AI remove the background instantly. Perfect for professional photos, product images, and more.
               </p>
+              <div className="text-sm text-gray-400 space-y-1">
+                <p>✓ Faster than learning Inkscape background removal</p>
+                <p>✓ No need for "inkscape how to remove background" tutorials</p>
+                <p>✓ One-click alternative to manual Inkscape editing</p>
+              </div>
               <p className="text-sm text-gray-300 mt-4">
                 Built with love by Addy Osmani using Transformers.js
               </p>
@@ -276,7 +281,8 @@ export default function App() {
 
             {images.length === 0 && (
               <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl text-gray-700 font-semibold mb-4">No image? Try one of these:</h3>
+                <h3 className="text-xl text-gray-700 font-semibold mb-4">No image? Try one of these sample images:</h3>
+                <p className="text-sm text-gray-600 mb-4">See how easy it is compared to Inkscape background removal tutorials</p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {sampleImages.map((url, index) => (
                     <button
@@ -292,9 +298,14 @@ export default function App() {
                     </button>
                   ))}
                 </div>
-                <p className="text-sm text-gray-500 mt-4">
-                  All images are processed locally on your device and are not uploaded to any server.
-                </p>
+                <div className="mt-4 space-y-2">
+                  <p className="text-sm text-gray-500">
+                    All images are processed locally on your device and are not uploaded to any server.
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    Why struggle with "inkscape remove background" when you can get instant results here?
+                  </p>
+                </div>
               </div>
             )}
 
