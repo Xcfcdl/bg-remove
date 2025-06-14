@@ -33,7 +33,6 @@ This is a free online background removal tool that serves as an easier alternati
 
 ## Website
 - https://backgroundremover.waicto.com/
-- https://bgremover.waicto.com/
 
 ## Contact
 - Email: contact@waicto.com
