@@ -49,9 +49,31 @@ export default function App() {
       return;
     }
 
-    // Only check iOS on load since that won't change
+    // Check device capabilities on load
     const { isIOS: isIOSDevice } = getModelInfo();
     setIsIOS(isIOSDevice);
+    
+    // Check WebGPU availability
+    const checkWebGPUSupport = async () => {
+      const gpu = (navigator as any).gpu;
+      if (gpu) {
+        try {
+          const adapter = await gpu.requestAdapter();
+          if (adapter) {
+            setIsWebGPU(true);
+            console.log('WebGPU is available');
+          } else {
+            console.log('WebGPU adapter not available');
+          }
+        } catch (error) {
+          console.log('WebGPU check failed:', error);
+        }
+      } else {
+        console.log('WebGPU not supported by browser');
+      }
+    };
+    
+    checkWebGPUSupport();
     setIsLoading(false);
   }, []);
 
@@ -60,14 +82,28 @@ export default function App() {
     setIsModelSwitching(true);
     setError(null);
     try {
+      console.log(`Switching to model: ${newModel}`);
       const initialized = await initializeModel(newModel);
       if (!initialized) {
-        throw new Error("Failed to initialize new model");
+        console.warn(`Failed to initialize ${newModel}, falling back to RMBG-1.4`);
+        // If WebGPU model fails, fall back to RMBG-1.4
+        if (newModel === 'Xenova/modnet') {
+          setCurrentModel('briaai/RMBG-1.4');
+        } else {
+          throw new Error("Failed to initialize fallback model");
+        }
+      } else {
+        setCurrentModel(newModel);
+        const { isWebGPUSupported, currentModelId } = getModelInfo();
+        setIsWebGPU(isWebGPUSupported);
+        console.log(`Model switched to: ${currentModelId}, WebGPU: ${isWebGPUSupported}`);
       }
-      setCurrentModel(newModel);
     } catch (err) {
-      if (err instanceof Error && err.message.includes("Falling back")) {
+      console.error("Model switch error:", err);
+      if (err instanceof Error && (err.message.includes("Falling back") || err.message.includes("WebGPU"))) {
+        // For WebGPU-related errors, fall back to RMBG-1.4
         setCurrentModel('briaai/RMBG-1.4');
+        console.log("Switched to fallback model due to WebGPU error");
       } else {
         setError({
           message: err instanceof Error ? err.message : "Failed to switch models"
@@ -91,20 +127,33 @@ export default function App() {
       setIsLoading(true);
       setError(null);
       try {
+        console.log("Initializing background removal model...");
         const initialized = await initializeModel();
         if (!initialized) {
-          throw new Error("Failed to initialize background removal model");
+          console.warn("Model initialization failed, but continuing with fallback");
+          // Don't throw error here, as the model might still work with fallback
         }
         // Update WebGPU support status after model initialization
-        const { isWebGPUSupported } = getModelInfo();
+        const { isWebGPUSupported, currentModelId } = getModelInfo();
         setIsWebGPU(isWebGPUSupported);
+        console.log(`Model initialized: ${currentModelId}, WebGPU: ${isWebGPUSupported}`);
       } catch (err) {
-        setError({
-          message: err instanceof Error ? err.message : "An unknown error occurred"
-        });
-        setImages([]); // Clear the newly added images if model fails to load
-        setIsLoading(false);
-        return;
+        console.error("Model initialization error:", err);
+        // Only show error if it's a critical failure
+        if (err instanceof Error && !err.message.includes("WebGPU")) {
+          setError({
+            message: err instanceof Error ? err.message : "An unknown error occurred"
+          });
+          setImages([]); // Clear the newly added images if model fails to load
+          setIsLoading(false);
+          return;
+        } else {
+          // For WebGPU errors, continue with fallback
+          console.log("Continuing with fallback model due to WebGPU error");
+          const { isWebGPUSupported, currentModelId } = getModelInfo();
+          setIsWebGPU(isWebGPUSupported);
+          console.log(`Fallback model: ${currentModelId}`);
+        }
       }
       setIsLoading(false);
     }
@@ -185,13 +234,18 @@ export default function App() {
                     value={currentModel}
                     onChange={handleModelChange}
                     className="bg-white border border-orange-300 rounded-md px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 w-full sm:w-auto min-w-0"
-                    disabled={!isWebGPU}
+                    disabled={isModelSwitching}
                   >
                     <option value="briaai/RMBG-1.4">RMBG-1.4 (Cross-browser)</option>
                     {isWebGPU && (
                       <option value="Xenova/modnet">MODNet (WebGPU)</option>
                     )}
                   </select>
+                  {!isWebGPU && (
+                    <p className="text-xs text-gray-500 mt-1">
+                      WebGPU不可用，仅显示兼容模型
+                    </p>
+                  )}
                 </div>
               )}
             </div>

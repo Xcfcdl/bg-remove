@@ -50,6 +50,7 @@ const state: ModelState = {
 async function initializeWebGPU() {
   const gpu = (navigator as any).gpu;
   if (!gpu) {
+    console.log("WebGPU not available: navigator.gpu not found");
     return false;
   }
 
@@ -57,31 +58,103 @@ async function initializeWebGPU() {
     // Test if we can actually create an adapter
     const adapter = await gpu.requestAdapter();
     if (!adapter) {
+      console.log("WebGPU not available: no adapter found");
       return false;
     }
 
     // Configure environment for WebGPU
     env.allowLocalModels = false;
-    if (env.backends?.onnx?.wasm) {
-      env.backends.onnx.wasm.proxy = false;
+    
+    // Ensure WebAssembly backend is properly configured
+    if (!env.backends) {
+      env.backends = {
+        onnx: {
+          wasm: {
+            proxy: false,
+            numThreads: 1
+          }
+        }
+      };
+    } else {
+      if (!env.backends.onnx) {
+        env.backends.onnx = {
+          wasm: {
+            proxy: false,
+            numThreads: 1
+          }
+        };
+      } else {
+        // Try to configure wasm settings safely
+        try {
+          if (!env.backends.onnx.wasm) {
+            // Create wasm object if it doesn't exist
+            const wasmConfig = {
+              proxy: false,
+              numThreads: 1
+            };
+            Object.defineProperty(env.backends.onnx, 'wasm', {
+              value: wasmConfig,
+              writable: true,
+              configurable: true
+            });
+          } else {
+            // Only modify if the properties are writable
+            const wasmObj = env.backends.onnx.wasm as any;
+            try {
+              if ('proxy' in wasmObj) {
+                wasmObj.proxy = false;
+              }
+            } catch (e) {
+              console.warn('Cannot set proxy property:', e);
+            }
+            try {
+              if ('numThreads' in wasmObj) {
+                wasmObj.numThreads = 1;
+              }
+            } catch (e) {
+              console.warn('Cannot set numThreads property:', e);
+            }
+          }
+        } catch (error) {
+          console.warn('Failed to configure WASM settings:', error);
+        }
+      }
+    }
+    
+    // Wait longer for WebAssembly initialization
+    console.log("Waiting for WebAssembly initialization...");
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Check if WebAssembly is available
+    if (typeof WebAssembly === 'undefined') {
+      console.error("WebAssembly is not available in this environment");
+      return false;
     }
 
-    // Wait for WebAssembly initialization
-    await new Promise(resolve => setTimeout(resolve, 100));
-
+    console.log("Initializing WebGPU model...");
     // Initialize model with WebGPU
     state.model = await AutoModel.from_pretrained(WEBGPU_MODEL_ID, {
       device: "webgpu",
       config: {
         model_type: 'modnet',
         architectures: ['MODNet']
+      },
+      progress_callback: (progress) => {
+        console.log(`Loading WebGPU model: ${Math.round(progress * 100)}%`);
       }
     });
+    
+    console.log("Initializing WebGPU processor...");
     state.processor = await AutoProcessor.from_pretrained(WEBGPU_MODEL_ID);
     state.isWebGPUSupported = true;
+    console.log("WebGPU initialization successful");
     return true;
   } catch (error) {
     console.error("WebGPU initialization failed:", error);
+    // Reset environment settings on failure
+    if (env.backends?.onnx?.wasm) {
+      env.backends.onnx.wasm.proxy = true;
+    }
     return false;
   }
 }
@@ -167,7 +240,8 @@ export async function initializeModel(forceModelId?: string): Promise<boolean> {
       throw new Error("Failed to initialize model or processor");
     }
     
-    state.currentModelId = selectedModelId;
+    // Don't override currentModelId here - it should remain as FALLBACK_MODEL_ID
+    // since we're using the fallback model
     return true;
   } catch (error) {
     console.error("Error initializing model:", error);
@@ -183,7 +257,7 @@ export async function initializeModel(forceModelId?: string): Promise<boolean> {
 export function getModelInfo(): ModelInfo {
   return {
     currentModelId: state.currentModelId,
-    isWebGPUSupported: Boolean((navigator as any).gpu),
+    isWebGPUSupported: state.isWebGPUSupported,
     isIOS: state.isIOS
   };
 }
