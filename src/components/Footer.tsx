@@ -23,18 +23,85 @@ const Footer: React.FC = () => {
 
         {/* How It Works */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            {t.footer.howItWorks.title}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.footer.howItWorks.steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {index + 1}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              {t.footer.howItWorks.title}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Transform your images in just a few simple steps
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {/* Connection lines for desktop */}
+            <div className="hidden lg:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-orange-300 via-orange-400 to-orange-300"></div>
+            
+            {t.footer.howItWorks.steps.map((step, index) => {
+              const icons = [
+                // Upload icon
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>,
+                // AI detection icon
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>,
+                // Processing icon
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>,
+                // Download icon
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              ];
+              
+              return (
+                <div key={index} className="relative group">
+                  <div className="text-center transform transition-all duration-300 hover:scale-105">
+                    {/* Icon container with gradient background */}
+                    <div className="relative mx-auto mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <div className="text-white">
+                          {icons[index]}
+                        </div>
+                      </div>
+                      {/* Step number badge */}
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-white border-2 border-orange-500 text-orange-600 rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                        {index + 1}
+                      </div>
+                      {/* Pulse animation for active step */}
+                      <div className="absolute inset-0 w-20 h-20 bg-orange-400 rounded-2xl opacity-0 group-hover:opacity-20 animate-pulse"></div>
+                    </div>
+                    
+                    {/* Step description */}
+                    <div className="bg-white rounded-xl p-4 shadow-sm border border-orange-100 group-hover:shadow-md transition-all duration-300">
+                      <p className="text-gray-700 font-medium leading-relaxed">
+                        {step.replace(/^\d+\.\s*/, '')}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Arrow connector for mobile */}
+                  {index < 3 && (
+                    <div className="lg:hidden flex justify-center mt-4 mb-4">
+                      <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
-                <p className="text-gray-700">{step}</p>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+          
+          {/* Call to action */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
+              <span>Try It Now - It's Free!</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
           </div>
         </section>
 

@@ -169,22 +169,22 @@ export default function App() {
   // Remove the full screen error and loading states
 
   return (
-    <div className="min-h-screen bg-orange-light-gradient" onPaste={handlePaste}>
+    <div className="min-h-screen bg-orange-light-gradient overflow-x-hidden" onPaste={handlePaste}>
       <nav className="bg-white shadow-orange border-b border-orange-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-orange-gradient">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+            <h1 className="text-xl sm:text-2xl font-bold text-orange-gradient flex-shrink-0">
               {t.nav.title}
             </h1>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
               <LanguageSelector />
               {!isIOS && (
-                <div className="flex items-center gap-4">
-                  <span className="text-gray-600">{t.nav.model}</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                  <span className="text-sm sm:text-base text-gray-600 flex-shrink-0">{t.nav.model}</span>
                   <select
                     value={currentModel}
                     onChange={handleModelChange}
-                    className="bg-white border border-orange-300 rounded-md px-3 py-1 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="bg-white border border-orange-300 rounded-md px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 w-full sm:w-auto min-w-0"
                     disabled={!isWebGPU}
                   >
                     <option value="briaai/RMBG-1.4">RMBG-1.4 (Cross-browser)</option>
@@ -197,7 +197,7 @@ export default function App() {
             </div>
           </div>
           {isIOS && (
-            <p className="text-sm text-orange-600 mt-2">
+            <p className="text-xs sm:text-sm text-orange-600 mt-2 break-words">
               {t.nav.iosOptimized}
             </p>
           )}
@@ -205,32 +205,32 @@ export default function App() {
       </nav>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className={`grid ${images.length === 0 ? 'grid-cols-2 gap-8' : 'grid-cols-1'}`}>
+        <div className={`grid ${images.length === 0 ? 'grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8' : 'grid-cols-1'}`}>
           {images.length === 0 && (
-            <div className="flex flex-col justify-center items-start bg-white rounded-xl p-8 shadow-orange">
+            <div className="flex flex-col justify-center items-start bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-orange">
               <img 
                 src="hero.png"
                 alt="Hero image"
-                className="mb-6 w-full object-cover h-[400px] rounded-lg"
+                className="mb-4 sm:mb-6 w-full object-cover h-[250px] sm:h-[300px] lg:h-[400px] rounded-lg"
               />
-              <h2 className="text-4xl font-bold text-orange-gradient mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-gradient mb-3 sm:mb-4">
                 {t.hero.title}
               </h2>
-              <p className="text-xl text-gray-700 mb-4 font-medium">
+              <p className="text-lg sm:text-xl text-gray-700 mb-3 sm:mb-4 font-medium">
                 {t.hero.subtitle}
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 {t.hero.description}
               </p>
-              <div className="text-sm text-gray-500 space-y-2 mb-6">
+              <div className="text-xs sm:text-sm text-gray-500 space-y-1 sm:space-y-2 mb-4 sm:mb-6">
                 {t.hero.features.map((feature, index) => (
                   <p key={index} className="flex items-center">
-                    <span className="text-orange-500 mr-2">✓</span>
-                    {feature.replace('✓ ', '')}
+                    <span className="text-orange-500 mr-2 flex-shrink-0">✓</span>
+                    <span className="break-words">{feature.replace('✓ ', '')}</span>
                   </p>
                 ))}
               </div>
-              <p className="text-sm text-orange-400 font-medium">
+              <p className="text-xs sm:text-sm text-orange-400 font-medium">
                 {t.hero.credit}
               </p>
             </div>
@@ -239,7 +239,7 @@ export default function App() {
           <div className={images.length === 0 ? '' : 'w-full'}>
             <div
               {...getRootProps()}
-              className={`p-8 mb-8 border-2 border-dashed rounded-xl text-center cursor-pointer transition-all duration-300 ease-in-out bg-white shadow-orange
+              className={`p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 border-2 border-dashed rounded-xl text-center cursor-pointer transition-all duration-300 ease-in-out bg-white shadow-orange
                 ${isDragAccept ? "border-green-500 bg-green-50 shadow-green-200" : ""}
                 ${isDragReject ? "border-red-500 bg-red-50 shadow-red-200" : ""}
                 ${isDragActive ? "border-orange-500 bg-orange-50 shadow-orange-lg" : "border-orange-300 hover:border-orange-500 hover:bg-orange-50 hover:shadow-orange-lg"}
@@ -278,22 +278,22 @@ export default function App() {
                     <svg className="w-12 h-12 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <p className="text-lg text-gray-700 font-medium">
+                    <p className="text-base sm:text-lg text-gray-700 font-medium px-2">
                       {isDragActive
                         ? "Drop the images here..."
                         : t.upload.dragDrop}
                     </p>
-                    <p className="text-sm text-orange-600">{t.upload.clickSelect}</p>
+                    <p className="text-xs sm:text-sm text-orange-600">{t.upload.clickSelect}</p>
                   </>
                 )}
               </div>
             </div>
 
             {images.length === 0 && (
-              <div className="bg-white rounded-xl p-6 shadow-orange border border-orange-100">
-                <h3 className="text-xl text-gray-800 font-semibold mb-4">{t.samples.title}</h3>
-                <p className="text-sm text-orange-600 mb-4 font-medium">{t.samples.description}</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-white rounded-xl p-4 sm:p-6 shadow-orange border border-orange-100">
+                <h3 className="text-lg sm:text-xl text-gray-800 font-semibold mb-3 sm:mb-4">{t.samples.title}</h3>
+                <p className="text-xs sm:text-sm text-orange-600 mb-3 sm:mb-4 font-medium">{t.samples.description}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
                   {sampleImages.map((url, index) => (
                     <button
                       key={index}
@@ -309,14 +309,14 @@ export default function App() {
                     </button>
                   ))}
                 </div>
-                <div className="mt-6 space-y-2 p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <p className="text-sm text-gray-700 flex items-center">
-                    <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-4 sm:mt-6 space-y-1 sm:space-y-2 p-3 sm:p-4 bg-orange-50 rounded-lg border border-orange-200">
+                  <p className="text-xs sm:text-sm text-gray-700 flex items-start">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {t.samples.privacy}
+                    <span className="break-words">{t.samples.privacy}</span>
                   </p>
-                  <p className="text-xs text-orange-600 font-medium">
+                  <p className="text-xs text-orange-600 font-medium break-words">
                     💡 {t.samples.comparison}
                   </p>
                 </div>

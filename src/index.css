@@ -150,3 +150,32 @@ input[type="color"]::-webkit-color-swatch {
   height: 100%;
   object-fit: cover;
 }
+
+/* Mobile responsive utilities */
+@media (max-width: 640px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure buttons don't overflow */
+  button, a {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  
+  /* Responsive text sizing */
+  .text-responsive {
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+  }
+}
