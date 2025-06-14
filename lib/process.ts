@@ -65,12 +65,12 @@ async function initializeWebGPU() {
     // Configure environment for WebGPU
     env.allowLocalModels = false;
     
-    // Ensure WebAssembly backend is properly configured
+    // Ensure WebAssembly backend is properly configured for WebGPU
     if (!env.backends) {
       env.backends = {
         onnx: {
           wasm: {
-            proxy: false,
+            proxy: true,
             numThreads: 1
           }
         }
@@ -79,7 +79,7 @@ async function initializeWebGPU() {
       if (!env.backends.onnx) {
         env.backends.onnx = {
           wasm: {
-            proxy: false,
+            proxy: true,
             numThreads: 1
           }
         };
@@ -89,7 +89,7 @@ async function initializeWebGPU() {
           if (!env.backends.onnx.wasm) {
             // Create wasm object if it doesn't exist
             const wasmConfig = {
-              proxy: false,
+              proxy: true,
               numThreads: 1
             };
             Object.defineProperty(env.backends.onnx, 'wasm', {
@@ -102,7 +102,7 @@ async function initializeWebGPU() {
             const wasmObj = env.backends.onnx.wasm as any;
             try {
               if ('proxy' in wasmObj) {
-                wasmObj.proxy = false;
+                wasmObj.proxy = true;
               }
             } catch (e) {
               console.warn('Cannot set proxy property:', e);
@@ -123,7 +123,18 @@ async function initializeWebGPU() {
     
     // Wait longer for WebAssembly initialization
     console.log("Waiting for WebAssembly initialization...");
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Initialize WASM backend explicitly
+    try {
+      console.log("Initializing WASM backend...");
+      if (env.backends?.onnx?.wasm && typeof (env.backends.onnx.wasm as any).init === 'function') {
+        await (env.backends.onnx.wasm as any).init();
+        console.log("WASM backend initialized successfully");
+      }
+    } catch (error) {
+      console.warn("WASM backend initialization warning:", error);
+    }
     
     // Check if WebAssembly is available
     if (typeof WebAssembly === 'undefined') {
@@ -166,9 +177,28 @@ export async function initializeModel(forceModelId?: string): Promise<boolean> {
     if (state.isIOS) {
       console.log('iOS detected, using RMBG-1.4 model');
       env.allowLocalModels = false;
-      if (env.backends?.onnx?.wasm) {
-        env.backends.onnx.wasm.proxy = true;
-      }
+      
+      // Configure WASM backend for iOS
+       if (!env.backends) {
+         env.backends = {
+           onnx: {
+             wasm: {
+               proxy: true,
+               numThreads: 1
+             }
+           }
+         };
+       } else if (env.backends?.onnx?.wasm) {
+         try {
+           env.backends.onnx.wasm.proxy = true;
+         } catch (e) {
+           console.warn('Cannot configure WASM settings for iOS:', e);
+         }
+       }
+      
+      // Wait for WASM initialization on iOS
+      console.log("Initializing WASM for iOS...");
+      await new Promise(resolve => setTimeout(resolve, 500));
 
       state.model = await AutoModel.from_pretrained(FALLBACK_MODEL_ID, {
         config: { model_type: 'custom' }
@@ -208,9 +238,28 @@ export async function initializeModel(forceModelId?: string): Promise<boolean> {
     
     // Use fallback model
     env.allowLocalModels = false;
-    if (env.backends?.onnx?.wasm) {
-      env.backends.onnx.wasm.proxy = true;
-    }
+    
+    // Configure WASM backend for fallback model
+     if (!env.backends) {
+       env.backends = {
+         onnx: {
+           wasm: {
+             proxy: true,
+             numThreads: 1
+           }
+         }
+       };
+     } else if (env.backends?.onnx?.wasm) {
+       try {
+         env.backends.onnx.wasm.proxy = true;
+       } catch (e) {
+         console.warn('Cannot configure WASM settings for fallback model:', e);
+       }
+     }
+    
+    // Wait for WASM initialization
+    console.log("Initializing WASM for fallback model...");
+    await new Promise(resolve => setTimeout(resolve, 500));
     
     state.model = await AutoModel.from_pretrained(FALLBACK_MODEL_ID, {
       progress_callback: (progress) => {

@@ -45,7 +45,7 @@ export default function App() {
 
   useEffect(() => {
     if (isMobileSafari()) {
-      window.location.href = 'https://bg-mobile.addy.ie';
+      window.location.href = 'https://waicto.com';
       return;
     }
 
